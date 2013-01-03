@@ -1,4 +1,4 @@
 webgloo
 =======
 
-PHP framework for web applications
+minimal PHP framework for web applications
