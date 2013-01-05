@@ -160,14 +160,14 @@ namespace com\indigloo {
          */
         static function isEmpty($name, $value) {
             if(is_null($value)) {
-                $message = 'Bad input:: ' . $name . ' is empty or null!';
+                $message = sprintf(" Bad input : %s is null", $name); 
                 trigger_error($message, E_USER_ERROR);
             }
 
             $value = trim($value);
 
             if(strlen($value)  == 0 ) {
-                $message = 'Bad input:: ' . $name . ' is empty or null!';
+                $message = sprintf(" Bad input : %s is empty", $name); 
                 trigger_error($message, E_USER_ERROR);
             }
 
