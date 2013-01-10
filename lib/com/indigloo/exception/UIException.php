@@ -11,7 +11,9 @@ namespace com\indigloo\exception {
             if(!is_array($messages) || (sizeof($messages) == 0)) {
                 trigger_error("first argument to UIException is not an array",E_USER_ERROR);
             }
-            parent::__construct("webgloo ui exception");
+            
+            $message = $messages[0];
+            parent::__construct($message);
             $this->messages = $messages;
         }
 

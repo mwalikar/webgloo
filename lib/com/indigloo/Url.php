@@ -5,6 +5,7 @@
 namespace com\indigloo {
 
     use \com\indigloo\Configuration as Config ;
+    use \com\indigloo\exception\UIException;
 
     /*
      * Class to provide utility functions for URL creation and processing.
@@ -173,7 +174,8 @@ namespace com\indigloo {
             }
 
             if(is_null($value)){
-                trigger_error("Required request parameter $name is missing",E_USER_ERROR);
+                $message = sprintf("Request parameter %s is missing from URL",$name);
+                throw new UIException(array($message));
             }
 
             return $value ;
